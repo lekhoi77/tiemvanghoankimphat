@@ -205,16 +205,17 @@ padding: 72px 120px;
     justify-content: center;
 }
 .pricetable-content {
-    background: #fffbe6;
+    position: relative;
+    background: linear-gradient(rgba(255, 251, 230, 0.9), rgba(255, 251, 230, 0.8)), url('/asset/img/pattern.png');
     border-radius: 8px;
     width: 1400px;
     margin: 0 auto;
     box-shadow: 0 2px 16px rgba(0,0,0,0.04);
     padding: 40px 0;
     border: 16px solid #c62828;
-    position: relative;
     top: 0;
 }
+
 .pricetable-header {
     display: flex;
     flex-direction: column;
