@@ -1,0 +1,118 @@
+body {
+    font-family: var(--font-family);
+}
+header {
+    display: flex;
+    background-color: var(--primary-600);
+    justify-content: center;
+    align-items: center;
+    padding: 4px 0;
+    cursor: pointer;
+}
+
+header h1 {
+    font-family: var(--font-family);
+    font-weight: var(--bold);
+    font-size: var(--text-18);
+    text-decoration: underline;
+    color: var(--secondary-400);
+}
+nav {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    z-index: 10;
+    padding: 0;
+    pointer-events: none;
+    padding: 0px 120px;
+    
+}
+.right {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    background-color: var(--secondary-50);
+    border-radius: 30px;
+    padding: 12px 48px;
+    align-items: center;
+    height: auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    pointer-events: auto;
+}
+.right li{
+    list-style: none;
+    background: none;
+    padding: 0;
+    color: var(--primary-700);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.right li:hover{
+    color: var(--secondary-600);
+    transform: scale(1.05);
+    
+}
+.right li.active{
+    color: var(--secondary-600);
+}
+/* Hero-section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('/asset/img/herobanner.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    gap: 24px;
+}
+.hero-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+}
+.hero-content h1 {
+    font-size: var(--display-36);
+    font-weight: var(--bold);
+    color: var(--secondary-100);
+}
+.hero-content h2{
+    width: 500px;
+    font-size: var(--text-18);
+    font-weight: var(--medium);
+    color: var(--neutral-200);
+    text-align: center;
+}
+.hero-content h2 span{
+    color: var(--secondary-200);    
+}
+.hero button{
+    font-size: var(--text-16);
+    color: var(--secondary-100);
+    font-weight: var(--medium);
+    background-color: var(--primary-500);
+    border-radius: 20px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+}
+.slider {
+    width: 100%;
+    height: 533px;
+}
+.slider img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

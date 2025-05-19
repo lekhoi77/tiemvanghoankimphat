@@ -1,0 +1,65 @@
+/* Source Sans 3 */
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&family=Raleway:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Colors */
+
+    --primary-50: #F9E7E7;
+    --primary-100: #F3CECE;
+    --primary-200: #E79E9E;
+    --primary-300: #DC6D6D;
+    --primary-400: #D03D3D;
+    --primary-500: #C40C0C;
+    --primary-600: #A30A0A;
+    --primary-700: #830808;
+    --primary-800: #620606;
+    --primary-900: #410404;
+    --primary-950: #310303;
+
+
+    --secondary-50: #FFF9E6;
+    --secondary-100: #FFF3CC;
+    --secondary-200: #FFE699;
+    --secondary-300: #FFDA66;
+    --secondary-400: #FFCD33;
+    --secondary-500: #FFC100;
+    --secondary-600: #D5A100;
+    --secondary-700: #AA8100;
+    --secondary-800: #806100;
+    --secondary-900: #554000;
+    --secondary-950: #403000;
+
+
+    --neutral-50: #FFFEFD;
+    --neutral-100: #FFFEFA;
+    --neutral-200: #FFFDF5;
+    --neutral-300: #FFFBF0;
+    --neutral-400: #FFFAEB;
+    --neutral-500: #FFF9E6;
+    --neutral-600: #D5D0C0;
+    --neutral-700: #AAA699;
+    --neutral-800: #807D73;
+    --neutral-900: #55534D;
+    --neutral-950: #403E3A;
+    /* n/Colors */
+    /* Typo */
+    --font-family: 'Source Sans 3', sans-serif;
+    --bold: 700;
+    --medium: 500;
+    --regular: 400;
+    --display-60: 60px;
+    --display-48: 48px;
+    --display-36: 36px;
+    --text-24: 24px;
+    --text-20: 20px;
+    --text-16: 16px;
+    --text-14: 14px;
+    --text-12: 12px;
+
+}
