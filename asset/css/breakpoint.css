@@ -2,3 +2,370 @@
     .pricetable-bg { width: 100vw; height: auto; }
     .pricetable-content { width: 95vw; padding: 12px; }
 }
+
+/* Media queries for Hero section */
+@media screen and (max-width: 1024px) {
+    .hero-content h1 {
+        font-size: var(--text-30);
+    }
+    
+    .hero-content h2 {
+        width: 80%;
+        font-size: var(--text-16);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero {
+        height: 70vh;
+        padding: 0 20px;
+        text-align: center;
+    }
+    
+    .hero-content h1 {
+        font-size: var(--text-24);
+    }
+    
+    .hero-content h2 {
+        width: 100%;
+        font-size: var(--text-16);
+    }
+    
+    .hero button {
+        font-size: var(--text-14);
+        padding: 10px 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero {
+        height: 60vh;
+    }
+    
+    .hero-content h1 {
+        font-size: var(--text-20);
+    }
+    
+    .hero-content h2 {
+        font-size: var(--text-14);
+    }
+    
+    .hero button {
+        font-size: var(--text-12);
+        padding: 8px 16px;
+    }
+}
+
+/* Featured Section Responsive */
+@media screen and (max-width: 1024px) {
+    .featured {
+        padding: 50px 60px;
+    }
+    
+    .featured h1 {
+        font-size: var(--text-24);
+    }
+    
+    .featured-product-cards {
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 30px;
+    }
+    
+    .featured-product-card {
+        width: calc(50% - 30px);
+        max-width: 300px;
+    }
+    
+    .featured-product-card .content h2 {
+        font-size: var(--text-18);
+    }
+    
+    .featured-product-card p {
+        font-size: var(--text-14);
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .featured {
+        padding: 40px 20px;
+    }
+    
+    .featured h1 {
+        font-size: var(--text-20);
+    }
+    
+    .featured-product-cards {
+        gap: 20px;
+    }
+    
+    .featured-product-card {
+        width: calc(50% - 15px);
+    }
+    
+    .featured-product-card .content h2 {
+        font-size: var(--text-16);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .featured {
+        padding: 30px 15px;
+    }
+    
+    .featured h1 {
+        font-size: var(--text-24);
+    }
+    
+    .featured-product-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .featured-product-card {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+/* Price Table Responsive */
+@media screen and (max-width: 1200px) {
+    .pricetable-bg {
+        width: 100%;
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .pricetable-content {
+        width: 90%;
+        border-width: 10px;
+        padding: 30px 0;
+    }
+    
+    .pricetable-title-main {
+        font-size: 1.8rem;
+    }
+    
+    .pricetable-title-sub {
+        font-size: 1rem;
+    }
+    
+    .pricetable-info {
+        font-size: var(--text-18);
+        padding: 0 10px;
+    }
+    
+    .pricetable-table th {
+        font-size: 1rem;
+        padding: 10px 0;
+    }
+    
+    .pricetable-table td {
+        font-size: var(--text-20);
+        padding: 10px 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .pricetable {
+        margin-bottom: 40px;
+    }
+
+    .pricetable-content {
+        width: 95%;
+        border-width: 8px;
+        padding: 20px 0;
+    }
+    
+    .pricetable-header {
+        gap: 30px;
+    }
+    
+    .pricetable-title-main {
+        font-size: 1.5rem;
+    }
+    
+    .pricetable-title-sub {
+        font-size: 0.9rem;
+    }
+    
+    .pricetable-info {
+        font-size: var(--text-16);
+        flex-direction: column;
+        gap: 5px;
+        align-items: center;
+    }
+    
+    .pricetable-info span {
+        text-align: center !important;
+    }
+    
+    .pricetable-table {
+        border-spacing: 10px 10px;
+    }
+    
+    .pricetable-table th {
+        font-size: 0.9rem;
+        padding: 8px 0;
+    }
+    
+    .pricetable-table td {
+        font-size: var(--text-18);
+        padding: 8px 0;
+    }
+    
+    .pricetable-table td.name {
+        font-size: var(--text-18);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .pricetable-content {
+        border-width: 6px;
+        padding: 15px 0;
+    }
+    
+    .pricetable-title-main {
+        font-size: 1.2rem;
+    }
+    
+    .pricetable-title-sub {
+        font-size: 0.8rem;
+    }
+    
+    .pricetable-info {
+        font-size: var(--text-14);
+    }
+    
+    .pricetable-table {
+        border-spacing: 5px 5px;
+    }
+    
+    .pricetable-table th {
+        font-size: 0.8rem;
+        padding: 6px 2px;
+    }
+    
+    .pricetable-table td {
+        font-size: var(--text-16);
+        padding: 6px 2px;
+    }
+    
+    .pricetable-table td.name {
+        font-size: var(--text-16);
+    }
+    
+    .pricetable-table td b {
+        font-size: var(--text-16);
+    }
+}
+
+/* Chart Responsive */
+@media screen and (max-width: 1200px) {
+    .chart {
+        padding: 50px 60px;
+    }
+    
+    .chart h1 {
+        font-size: var(--text-24);
+        margin-bottom: 25px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .chart {
+        padding: 40px 20px;
+    }
+    
+    .chart h1 {
+        font-size: var(--text-24);
+        margin-bottom: 20px;
+    }
+    
+    /* Limit chart height on tablets */
+    .tradingview-widget-container {
+        height: 500px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .chart {
+        padding: 30px 10px;
+        position: relative;
+    }
+    
+    .chart h1 {
+        font-size: var(--text-24);
+        margin-bottom: 15px;
+    }
+    
+    /* Smaller chart height on phones */
+    .tradingview-widget-container {
+        height: 300px;
+        position: relative;
+    }
+    
+
+/* Mission & Vision Responsive */
+@media screen and (max-width: 1200px) {
+    .mission-vision {
+        padding: 80px 0;
+        min-height: 450px;
+    }
+    
+    .mission-vision-title {
+        font-size: var(--text-22);
+    }
+    
+    .description {
+        width: 80%;
+        font-size: var(--text-15);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .mission-vision {
+        padding: 60px 20px;
+        min-height: 400px;
+    }
+    
+    .mission-vision-title {
+        font-size: var(--text-18);
+    }
+    
+    .description {
+        width: 90%;
+        font-size: var(--text-13);
+    }
+    
+    .mission-vision::before {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .mission-vision {
+        padding: 50px 15px;
+        min-height: 350px;
+    }
+    
+    .mission-vision-title {
+        font-size: var(--text-24);
+    }
+    
+    .mission-vision-title h1 {
+        font-size: var(--text-24);
+        line-height: 1.4;
+    }
+    
+    .description {
+        width: 100%;
+        font-size: var(--text-11);
+        line-height: 1.5;
+    }
+    
+    .mission-vision::before {
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+}
