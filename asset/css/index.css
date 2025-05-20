@@ -195,7 +195,7 @@ nav {
     justify-content: center;
     height: 80vh;
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
-        url('/asset/img/herobanner.png');
+    url('/asset/img/herobanner.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -233,7 +233,7 @@ nav {
 }
 
 .hero-content h2 span {
-    color: var(--secondary-200);
+    color: var(--secondary-200);    
 }
 
 .hero button {
@@ -297,12 +297,12 @@ nav {
 /* n/slider */
 /* Featured  */
 .featured {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 48px;
-    padding: 72px 120px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+gap: 48px;
+padding: 72px 120px;
 }
 
 .featured-product-cards {
@@ -340,10 +340,10 @@ nav {
 }
 
 .featured-product-card .content h2 {
-    font-size: var(--text-20);
-    font-weight: var(--medium);
-    text-align: left;
-    color: var(--primary-500);
+ font-size: var(--text-20);
+ font-weight: var(--medium);
+ text-align: left;
+ color: var(--primary-500);
 }
 
 .featured-product-card p {
@@ -401,7 +401,7 @@ nav {
 }
 
 .pricetable-title-sub {
-    color: var(--secondary-600);
+ color: var(--secondary-600);
     font-size: 1.2rem;
     font-weight: bold;
     text-align: center;
@@ -985,22 +985,8 @@ footer {
 
 /* Scroll to Top Button */
 .scroll-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
     background-color: var(--primary-500);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     cursor: pointer;
-    z-index: 99;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.3s ease;
     pointer-events: none;
 }
 
@@ -1012,7 +998,6 @@ footer {
 
 .scroll-to-top:hover {
     background-color: var(--secondary-500);
-    transform: scale(1.1);
 }
 
 .scroll-to-top img {
@@ -1021,24 +1006,96 @@ footer {
     filter: brightness(0) invert(1);
 }
 
-/* Responsive for Scroll to Top button */
+/* Social Actions */
+.social-actions {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    z-index: 99;
+}
+
+.action-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.action-button.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.action-button:hover {
+    transform: scale(1.1);
+}
+
+.zalo-button {
+    background-color: #0068ff;
+    pointer-events: none;
+}
+
+.zalo-button img {
+    width: 28px;
+    height: 28px;
+}
+
+.mess-button {
+    background-color: #0084ff;
+    pointer-events: none;
+}
+
+.mess-button img {
+    width: 28px;
+    height: 28px;
+}
+
+/* Responsive for Social Actions */
 @media screen and (max-width: 768px) {
-    .scroll-to-top {
+    .social-actions {
         bottom: 20px;
         right: 20px;
+        gap: 12px;
+    }
+    
+    .action-button {
         width: 45px;
         height: 45px;
+    }
+    
+    .zalo-button img,
+    .mess-button img,
+    .scroll-to-top img {
+        width: 22px;
+        height: 22px;
     }
 }
 
 @media screen and (max-width: 480px) {
-    .scroll-to-top {
+    .social-actions {
         bottom: 15px;
         right: 15px;
+        gap: 10px;
+    }
+    
+    .action-button {
         width: 40px;
         height: 40px;
     }
     
+    .zalo-button img,
+    .mess-button img,
     .scroll-to-top img {
         width: 20px;
         height: 20px;

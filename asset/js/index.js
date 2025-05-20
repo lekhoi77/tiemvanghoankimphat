@@ -218,6 +218,65 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('scroll', toggleScrollToTopButton);
     }
 
+    // Social action buttons functionality
+    function handleSocialButtons() {
+        const zaloButton = document.querySelector('.zalo-button');
+        const messButton = document.querySelector('.mess-button');
+        
+        // Show/hide the buttons based on scroll position
+        function toggleSocialButtons() {
+            if (window.pageYOffset > 300) {
+                // Show buttons with staggered delay
+                setTimeout(() => {
+                    zaloButton.classList.add('show');
+                    zaloButton.style.pointerEvents = 'auto';
+                }, 100);
+                
+                setTimeout(() => {
+                    messButton.classList.add('show');
+                    messButton.style.pointerEvents = 'auto';
+                }, 200);
+                
+                // Scroll to top button handled by the existing toggleScrollToTopButton function
+            } else {
+                // Hide buttons with staggered delay
+                setTimeout(() => {
+                    messButton.classList.remove('show');
+                    messButton.style.pointerEvents = 'none';
+                }, 100);
+                
+                setTimeout(() => {
+                    zaloButton.classList.remove('show');
+                    zaloButton.style.pointerEvents = 'none';
+                }, 200);
+                
+                // Scroll to top button handled by the existing toggleScrollToTopButton function
+            }
+        }
+        
+        // Check position on load
+        toggleSocialButtons();
+        
+        // Check position on scroll
+        window.addEventListener('scroll', toggleSocialButtons);
+        
+        // Add hover animation effects
+        const actionButtons = document.querySelectorAll('.action-button');
+        
+        actionButtons.forEach(button => {
+            button.addEventListener('mouseenter', () => {
+                button.style.transform = 'scale(1.1)';
+            });
+            
+            button.addEventListener('mouseleave', () => {
+                button.style.transform = '';
+            });
+        });
+    }
+    
+    // Initialize social buttons
+    handleSocialButtons();
+
     // Notification popup functionality
     function handleNotificationPopup() {
         const notificationPopup = document.getElementById('notification-popup');
