@@ -1,0 +1,4 @@
+@media (max-width: 900px) {
+    .pricetable-bg { width: 100vw; height: auto; }
+    .pricetable-content { width: 95vw; padding: 12px; }
+}
