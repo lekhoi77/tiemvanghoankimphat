@@ -82,6 +82,46 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // Mobile chart interaction handling
+    function setupChartInteraction() {
+        const chartContainer = document.querySelector('.tradingview-widget-container');
+        const chartOverlay = document.querySelector('.chart-overlay');
+        const enableChartBtn = document.getElementById('enable-chart');
+        
+        if (!chartOverlay || !enableChartBtn) return;
+        
+        // Only show overlay on mobile devices
+        if (window.innerWidth <= 480) {
+            chartOverlay.classList.add('active');
+        }
+        
+        // Enable chart interaction when button is clicked
+        enableChartBtn.addEventListener('click', () => {
+            chartOverlay.classList.remove('active');
+            
+            // Re-enable overlay after 30 seconds to allow user to scroll past
+            setTimeout(() => {
+                if (window.innerWidth <= 480) {
+                    chartOverlay.classList.add('active');
+                }
+            }, 30000); // 30 seconds
+        });
+        
+        // Re-check on window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth <= 480) {
+                if (!chartOverlay.classList.contains('active')) {
+                    chartOverlay.classList.add('active');
+                }
+            } else {
+                chartOverlay.classList.remove('active');
+            }
+        });
+    }
+    
+    // Initialize chart interaction after a delay to ensure TradingView widget is loaded
+    setTimeout(setupChartInteraction, 2000);
 });
 
 // Hàm để lấy dữ liệu từ Google Sheets
