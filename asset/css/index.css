@@ -671,27 +671,28 @@ nav {
 
 /* Footer */
 footer {
-    
+    display: flex;
     background-color: var(--neutral-100);
-    padding: 32px 120px;
+    padding: 48px 120px;
     color: var(--primary-500);
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
 }
 
 .footer-container {
+
     display: flex;
-    flex-direction: row;
-    max-width: 1200px;
+
+    width: 100%;
     justify-content: space-between;
-    align-items: center;
-    gap: 40px;
-    padding: 0 20px;
 }
 
 .footer-logo {
     flex: 0 0 150px;
     display: flex;
-    
-    
+    align-items: flex-start;
+    justify-content: center;
 }
 
 .footer-logo img {
@@ -703,12 +704,16 @@ footer {
     flex: 1;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .info-col {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    flex: 1;
+    min-width: 150px;
 }
 
 .info-col h3 {
