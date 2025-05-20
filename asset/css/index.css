@@ -45,7 +45,6 @@ nav {
     padding: 0;
     pointer-events: none;
     padding: 0px 120px;
-
 }
 
 .right {
@@ -74,11 +73,105 @@ nav {
 .right li:hover {
     color: var(--secondary-600);
     transform: scale(1.05);
-
 }
 
 .right li.active {
     color: var(--secondary-600);
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    pointer-events: auto;
+    position: relative;
+    z-index: 100;
+}
+
+.hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: var(--primary-600);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Mobile Navigation Styles */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: var(--text-16);
+    }
+    
+    nav {
+        padding: 0 20px;
+    }
+    
+    .logo {
+        max-width: 60px;
+    }
+    
+    .hamburger {
+        display: flex;
+        margin-left: auto;
+    }
+    
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    .right {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 60%;
+        height: 100vh;
+        background-color: var(--secondary-50);
+        flex-direction: column;
+        padding: 80px 20px 40px;
+        transition: right 0.3s ease;
+        border-radius: 0;
+        gap: 20px;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .right.active {
+        right: 0;
+    }
+    
+    .right li {
+        font-size: var(--text-18);
+        padding: 10px 0;
+        width: 100%;
+        text-align: left;
+        border-bottom: 1px solid var(--neutral-200);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: var(--text-14);
+    }
+    
+    .logo {
+        max-width: 50px;
+    }
+    
+    .right {
+        width: 75%;
+    }
 }
 
 /* Hero-section */

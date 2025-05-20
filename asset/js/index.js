@@ -5,27 +5,29 @@ document.addEventListener('mousemove', e => {
   cursor.style.top  = e.clientY + 'px';
 });
 //Hero
-document.addEventListener('DOMContentLoaded', function() {
-    setTimeout(function() {
-        var heroContent = document.querySelector('.hero-content');
-        if (heroContent) {
-            heroContent.classList.add('show');
-        }
-        var heroButton = document.querySelector('.hero button');
-        if (heroButton) {
-            heroButton.classList.add('show');
-        }
-    }, 600);
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        document.querySelector('.hero-content').classList.add('show');
+    }, 300);
 
-    // Auto slider
+    setTimeout(() => {
+        document.querySelector('.hero button').classList.add('show');
+    }, 800);
+
+    // Slide show
+    let slideIndex = 0;
     const slides = document.querySelectorAll('.slider .slide');
-    let current = 0;
+
+    function showSlide() {
+        slides.forEach(slide => slide.classList.remove('active'));
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1 }
+        slides[slideIndex - 1].classList.add('active');
+        setTimeout(showSlide, 5000); // Change image every 5 seconds
+    }
+
     if (slides.length > 0) {
-        setInterval(() => {
-            slides[current].classList.remove('active');
-            current = (current + 1) % slides.length;
-            slides[current].classList.add('active');
-        }, 3000); // đổi slide mỗi 3 giây
+        showSlide();
     }
 
     // Lấy tất cả các liên kết có href bắt đầu bằng #
@@ -50,10 +52,40 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Hamburger menu
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.right');
+
+    if (hamburger) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a navigation item
+        document.querySelectorAll('.right li').forEach(item => {
+            item.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (event) => {
+            const isClickInsideNav = event.target.closest('.right');
+            const isClickOnHamburger = event.target.closest('.hamburger');
+            
+            if (!isClickInsideNav && !isClickOnHamburger && navMenu.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    }
 });
 
- // Hàm để lấy dữ liệu từ Google Sheets
- async function fetchGoldPrices() {
+// Hàm để lấy dữ liệu từ Google Sheets
+async function fetchGoldPrices() {
     // ID của Google Sheet
     const sheetId = '1Mo-iwZLuSR0k7TCwhjzcSM0ZTIMgkWykytG_YpikST0';
     
