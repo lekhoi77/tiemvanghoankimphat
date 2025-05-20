@@ -217,6 +217,43 @@ document.addEventListener('DOMContentLoaded', () => {
         // Check scroll position on scroll
         window.addEventListener('scroll', toggleScrollToTopButton);
     }
+
+    // Notification popup functionality
+    function handleNotificationPopup() {
+        const notificationPopup = document.getElementById('notification-popup');
+        const closeNotificationBtn = document.getElementById('close-notification');
+        
+        if (!notificationPopup || !closeNotificationBtn) return;
+        
+        // Get current time
+        const currentTime = new Date();
+        const currentHour = currentTime.getHours();
+        
+        // Check if time is between 7pm (19) and 9am (9)
+        const isNotificationTime = (currentHour >= 19 || currentHour < 9);
+        
+        if (isNotificationTime) {
+            // Show notification after a short delay
+            setTimeout(() => {
+                notificationPopup.classList.add('show');
+            }, 1000);
+            
+            // Close notification when close button is clicked
+            closeNotificationBtn.addEventListener('click', () => {
+                notificationPopup.classList.remove('show');
+            });
+            
+            // Also close notification when clicking outside the content
+            notificationPopup.addEventListener('click', (e) => {
+                if (e.target === notificationPopup) {
+                    notificationPopup.classList.remove('show');
+                }
+            });
+        }
+    }
+    
+    // Initialize notification popup
+    handleNotificationPopup();
 });
 
 // Hàm để lấy dữ liệu từ Google Sheets

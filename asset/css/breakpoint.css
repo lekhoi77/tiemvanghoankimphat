@@ -164,6 +164,7 @@
     .pricetable-table td {
         font-size: var(--text-20);
         padding: 10px 0;
+        text-align: center;
     }
 }
 
@@ -213,10 +214,12 @@
     .pricetable-table td {
         font-size: var(--text-18);
         padding: 8px 0;
+        text-align: center;
     }
     
     .pricetable-table td.name {
         font-size: var(--text-18);
+        text-align: center;
     }
 }
 
@@ -250,14 +253,17 @@
     .pricetable-table td {
         font-size: var(--text-16);
         padding: 6px 2px;
+        text-align: center;
     }
     
     .pricetable-table td.name {
         font-size: var(--text-16);
+        text-align: center;
     }
     
     .pricetable-table td b {
         font-size: var(--text-16);
+        text-align: center;
     }
 }
 
