@@ -677,7 +677,6 @@ footer {
     max-width: 1200px;
     justify-content: space-between;
     align-items: center;
-
     gap: 40px;
     padding: 0 20px;
 }
@@ -926,4 +925,44 @@ footer {
     .social-icons {
         justify-content: center;
     }
+}
+
+/* Scroll Reveal Animation */
+.reveal-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-section.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Add delay for staggered animation */
+.stagger-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.stagger-item.active:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.stagger-item.active:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.stagger-item.active:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.stagger-item.active:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+.stagger-item.active {
+    opacity: 1;
+    transform: translateY(0);
 }

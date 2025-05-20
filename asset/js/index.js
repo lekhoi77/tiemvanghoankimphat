@@ -122,6 +122,44 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initialize chart interaction after a delay to ensure TradingView widget is loaded
     setTimeout(setupChartInteraction, 2000);
+
+    // Scroll reveal functionality
+    const revealSections = document.querySelectorAll('.reveal-section');
+    const staggerItems = document.querySelectorAll('.stagger-item');
+    
+    function checkScroll() {
+        const triggerBottom = window.innerHeight * 0.85;
+        
+        // Check sections
+        revealSections.forEach((section) => {
+            const sectionTop = section.getBoundingClientRect().top;
+            
+            if (sectionTop < triggerBottom) {
+                section.classList.add('active');
+                
+                // Also check for stagger items within this section
+                const staggerItemsInSection = section.querySelectorAll('.stagger-item');
+                staggerItemsInSection.forEach((item) => {
+                    item.classList.add('active');
+                });
+            }
+        });
+        
+        // Check individual stagger items not in sections
+        staggerItems.forEach((item) => {
+            const itemTop = item.getBoundingClientRect().top;
+            
+            if (itemTop < triggerBottom) {
+                item.classList.add('active');
+            }
+        });
+    }
+    
+    // Initial check
+    setTimeout(checkScroll, 300);
+    
+    // Check on scroll
+    window.addEventListener('scroll', checkScroll);
 });
 
 // Hàm để lấy dữ liệu từ Google Sheets
