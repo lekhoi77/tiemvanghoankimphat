@@ -160,6 +160,63 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Check on scroll
     window.addEventListener('scroll', checkScroll);
+
+    // Handle menu clicks for navigation
+    const menuLinks = document.querySelectorAll('.right li a');
+    
+    menuLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                // Close mobile menu if open
+                const hamburger = document.querySelector('.hamburger');
+                const navMenu = document.querySelector('.right');
+                
+                if (hamburger && hamburger.classList.contains('active')) {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                }
+                
+                // Scroll to target section
+                window.scrollTo({
+                    top: targetElement.offsetTop - 20,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Scroll to top functionality
+    const scrollToTopButton = document.querySelector('.scroll-to-top');
+    
+    // Show/hide the button based on scroll position
+    function toggleScrollToTopButton() {
+        if (window.pageYOffset > 300) { // Show the button after scrolling 300px
+            scrollToTopButton.classList.add('show');
+        } else {
+            scrollToTopButton.classList.remove('show');
+        }
+    }
+    
+    // Smooth scroll to top when the button is clicked
+    if (scrollToTopButton) {
+        scrollToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Check scroll position on page load
+        toggleScrollToTopButton();
+        
+        // Check scroll position on scroll
+        window.addEventListener('scroll', toggleScrollToTopButton);
+    }
 });
 
 // Hàm để lấy dữ liệu từ Google Sheets
@@ -199,7 +256,7 @@ async function fetchGoldPrices() {
     } catch (error) {
         console.error('Lỗi khi lấy dữ liệu từ Google Sheets:', error);
         // Giữ nguyên dữ liệu hiện tại nếu có lỗi
-        alert('Không thể tải dữ liệu mới. Hiển thị dữ liệu cũ.');
+        // alert('Không thể tải dữ liệu mới. Hiển thị dữ liệu cũ.');
     }
 }
 

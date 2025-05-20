@@ -77,6 +77,12 @@ nav {
     cursor: pointer;
 }
 
+.right li a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+}
+
 .right li:hover {
     color: var(--secondary-600);
     transform: scale(1.05);
@@ -965,4 +971,70 @@ footer {
 .stagger-item.active {
     opacity: 1;
     transform: translateY(0);
+}
+
+.logo-link {
+    display: block;
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-500);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 99;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.scroll-to-top:hover {
+    background-color: var(--secondary-500);
+    transform: scale(1.1);
+}
+
+.scroll-to-top img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) invert(1);
+}
+
+/* Responsive for Scroll to Top button */
+@media screen and (max-width: 768px) {
+    .scroll-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .scroll-to-top {
+        bottom: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .scroll-to-top img {
+        width: 20px;
+        height: 20px;
+    }
 }
