@@ -317,6 +317,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Hàm để lấy dữ liệu từ Google Sheets
 async function fetchGoldPrices() {
+    // Kiểm tra thời gian hiện tại
+    const currentTime = new Date();
+    const currentHour = currentTime.getHours();
+    
+    // Kiểm tra nếu thời gian là từ 19h (7pm) đến 9h sáng
+    const isOutOfWorkingHours = (currentHour >= 19 || currentHour < 9);
+    
+    if (isOutOfWorkingHours) {
+        console.log('Ngoài giờ làm việc (19h-9h), giữ nguyên dữ liệu "Loading..."');
+        return; // Không lấy dữ liệu, giữ nguyên "Loading..." trong HTML
+    }
+
     // ID của Google Sheet
     const sheetId = '1Mo-iwZLuSR0k7TCwhjzcSM0ZTIMgkWykytG_YpikST0';
     
