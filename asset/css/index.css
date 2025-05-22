@@ -1243,7 +1243,7 @@ footer {
     text-align: center;
     font-size: var(--display-36);
     font-weight: var(--bold);
-    color: var(--primary-700);
+    color: var(--primary-500);
     margin-bottom: 40px;
 }
 
