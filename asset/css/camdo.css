@@ -1,4 +1,7 @@
 /* Breadcrumbs Styles */
+body{
+    background-color: var(--neutral-100);
+}
 .breadcrumbs {
     background-color: var(--neutral-200);
     padding: 12px 0;
