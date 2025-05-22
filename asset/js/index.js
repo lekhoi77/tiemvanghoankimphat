@@ -166,9 +166,18 @@ document.addEventListener('DOMContentLoaded', () => {
     
     menuLinks.forEach(link => {
         link.addEventListener('click', function(e) {
+            // Only prevent default for hash links (same page navigation)
+            const href = this.getAttribute('href');
+            
+            // If the link doesn't contain a hash or starts with http, allow default navigation
+            if (!href.includes('#') || href.startsWith('http')) {
+                return; // Let the default link behavior happen
+            }
+            
             e.preventDefault();
             
-            const targetId = this.getAttribute('href');
+            // For hash links, handle smooth scrolling
+            const targetId = href.includes('#') ? href.substring(href.indexOf('#')) : href;
             const targetElement = document.querySelector(targetId);
             
             if (targetElement) {

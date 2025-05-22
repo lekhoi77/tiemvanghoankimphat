@@ -49,8 +49,6 @@ nav {
     align-items: center;
     background: none;
     z-index: 10;
-    padding: 0;
-    pointer-events: none;
     padding: 0px 120px;
 }
 
@@ -981,6 +979,8 @@ footer {
 
 .logo-link {
     display: block;
+    cursor: pointer;
+    pointer-events: auto;
 }
 
 /* Scroll to Top Button */
