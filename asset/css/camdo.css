@@ -1,0 +1,322 @@
+/* Breadcrumbs Styles */
+.breadcrumbs {
+    background-color: var(--neutral-200);
+    padding: 12px 0;
+    border-bottom: 1px solid var(--neutral-300);
+    margin-top: 120px;
+}
+
+.breadcrumbs-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.breadcrumbs ul {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    align-items: center;
+}
+
+.breadcrumbs li {
+    font-size: var(--text-16);
+    color: var(--primary-600);
+}
+
+.breadcrumbs li:not(:last-child)::after {
+    content: "/";
+    margin-left: 10px;
+    color: var(--neutral-700);
+}
+
+.breadcrumbs a {
+    color: var(--neutral-900);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumbs a:hover {
+    color: var(--primary-500);
+}
+
+/* Article Container Styles */
+.article-container {
+    max-width: 1200px;
+    margin: 40px auto 60px;
+    padding: 0 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.article-container.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+article {
+    background-color: var(--neutral-50);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+}
+
+article h1 {
+    font-size: var(--display-36);
+    color: var(--primary-600);
+    text-align: center;
+    font-weight: var(--bold);
+}
+
+article h2 {
+    font-size: var(--text-20);
+    color: var(--secondary-500);
+  
+    font-weight: var(--medium);
+    text-align: center;
+}
+
+article h3 {
+    font-size: var(--text-18);
+    color: var(--primary-700);
+    margin: 30px 0 15px;
+    font-weight: var(--medium);
+}
+
+article h4 {
+    font-size: var(--text-20);
+    color: var(--primary-800);
+    font-weight: var(--regular);
+}
+
+.article-list {
+    list-style: none;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.article-list li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    font-size: var(--text-16);
+    line-height: 1.6;
+    color: var(--neutral-900);
+}
+
+.article-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--secondary-500);
+}
+
+/* Step List Styles */
+.step-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    background-color: var(--neutral-100);
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.step.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--secondary-500);
+    color: var(--neutral-100);
+    font-size: var(--text-20);
+    font-weight: var(--bold);
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.step-content {
+    flex-grow: 1;
+}
+
+/* Call to Action Button */
+.article-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-600);
+    color: white;
+    font-size: var(--text-16);
+    font-weight: var(--bold);
+    padding: 16px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(196, 12, 12, 0.3);
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: var(--primary-700);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(196, 12, 12, 0.4);
+}
+
+.cta-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(196, 12, 12, 0.3);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+    article h1 {
+        font-size: var(--display-30);
+    }
+    
+    article h2 {
+        font-size: var(--text-24);
+    }
+    
+    article h3 {
+        font-size: var(--text-20);
+    }
+    
+    article h4 {
+        font-size: var(--text-16);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .article-container {
+        margin: 30px auto 40px;
+    }
+    
+    article {
+        padding: 30px 20px;
+    }
+    
+    article h1 {
+        font-size: var(--text-24);
+    }
+    
+    article h2 {
+        font-size: var(--text-20);
+    }
+    
+    article h3 {
+        font-size: var(--text-16);
+    }
+    
+    article h4 {
+        font-size: var(--text-14);
+    }
+    
+    .step-number {
+        width: 40px;
+        height: 40px;
+        font-size: var(--text-20);
+        margin-right: 15px;
+    }
+    
+    .article-list li {
+        font-size: var(--text-14);
+    }
+    
+    .cta-button {
+        padding: 12px 24px;
+        font-size: var(--text-14);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .breadcrumbs {
+        margin-top: 60px;
+    }
+    
+    .article-container {
+        margin: 20px auto 30px;
+    }
+    
+    article {
+        padding: 20px 15px;
+    }
+    
+    article h1 {
+        font-size: var(--text-20);
+        margin-bottom: 20px;
+    }
+    
+    article h2 {
+        font-size: var(--text-16);
+        margin: 20px 0 15px;
+    }
+    
+    article h3 {
+        font-size: var(--text-14);
+        margin: 20px 0 10px;
+    }
+    
+    .step {
+        padding: 12px;
+    }
+    
+    .step-number {
+        width: 30px;
+        height: 30px;
+        font-size: var(--text-16);
+        margin-right: 10px;
+    }
+    
+    .article-list li {
+        font-size: var(--text-12);
+        padding-left: 20px;
+        margin-bottom: 8px;
+    }
+    
+    .article-list li::before {
+        width: 6px;
+        height: 6px;
+        top: 8px;
+    }
+    
+    .cta-button {
+        padding: 10px 20px;
+        font-size: var(--text-12);
+    }
+    .footer-logo {
+        align-items: center;
+        justify-content: center;
+    }
+} 
